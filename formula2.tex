@@ -1,0 +1,49 @@
+\documentclass[letter]{article}
+\usepackage{commath}
+\usepackage{multicol}
+\usepackage[margin=1.5cm]{geometry}
+\setlength{\columnsep}{1cm}
+\usepackage{pgfplots}
+\begin{document}
+\begin{multicols}{2}
+\vspace{2cm}
+\section{Techniques of Integration}
+Integration by Parts
+\[\int u \frac{dv}{dx}dx = uv - \int v \frac{du}{dx}dx\]
+Partial Fractions
+\[\frac{f(x)}{(ax - b)(cx - d)} = \frac{\frac{f(\frac{b}{a})}{c(\frac{b}{a}) - d}}{ax-b}+\frac{\frac{f(\frac{d}{c})}{a(\frac{d}{c}) - b}}{cx - d}\]
+Definition of the Definite integral
+\[\int_{a}^{b}f(x)dx = \lim\limits_{n\to\infty}\sum_{i=1}^{n}f(a+i\frac{b-a}{n})\frac{b-a}{n}\]
+\section{Differential Equations}
+Exponential Equations
+\[\frac{dm}{dt} = km \qquad m =m_{0}e^{kt}\]
+Logistic Growth
+\[\frac{dP}{dt} = kP(M-P) \qquad P = \frac{M}{1+Ae^{-(Mk)t}}\]
+Euler's Method
+\[\Delta y = \frac{dy}{dx} \Delta x\]
+Arc Length
+\[L = \int_{a}^{b}\sqrt{1+(\frac{dy}{dx})^{2}}dx\]
+\[L = \int_{a}^{b}\sqrt{1+(\frac{dx}{dy})^{2}}dy\]
+\section{Parametric, Polar, Vector}
+Parametric Equations
+
+when $\frac{dx}{dt} \neq 0$
+\[\frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}}\]
+\[\frac{d^{2}y}{dx^{2}} = \frac{\frac{d}{dt}(\frac{dy}{dx})}{\frac{dx}{dt}}\]
+
+(length of curve)
+\[L = \int_{a}^{b}\sqrt{(\frac{dx}{dt})^{2}+(\frac{dy}{dt})^{2}}dt\]
+Vectors
+\[\langle a , b \rangle = a\hat{\i} + b\hat{\j}\]
+\[r(t) = f(t)\hat{\i} + g(t)\hat{\j}\]
+\[\norm{\vec{v}} = \sqrt{(\frac{dx}{dt})^{2}+(\frac{dy}{dt})^{2}}\]
+Polar Graphing
+\[x = r\cos\theta \qquad y = r \sin\theta\]
+Polar Calculus
+\[\frac{dy}{dx}=\frac{\frac{dr}{d\theta}\sin\theta + r \cos\theta}{\frac{dr}{d\theta}\cos\theta - r\sin\theta}\]
+\[A = \int_{\alpha}^{\beta}\frac{1}{2}r^{2}d\theta\]
+\[A = \frac{1}{2}\int_{\alpha}^{\beta}R^{2} - r^{2}d\theta\]
+\[L = \int_{\alpha}^{\beta}\sqrt{r^{2}+(\frac{dr}{d\theta})^{2}}d\theta\]
+\[\frac{dr}{dt} = \frac{dr}{d\theta}\frac{d\theta}{dt}\]
+\end{multicols}
+\end{document}

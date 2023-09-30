@@ -1,0 +1,78 @@
+\documentclass[a4paper, 12p]{article}
+
+\begin{document}
+
+\author{Carlo Allietti}
+\title{Explaining Reverse Chain Rule}
+\date{\today}
+
+
+\maketitle
+
+\section{The Equation}
+
+Here is a more consise form of the equation for reverse chain rule.
+
+\[\int f \circ g dx = \int \frac{f \circ g}{g'} dg\]
+
+\section{Using My Method}
+
+Instead of defining a $u$, we do the same process of finding the ``inner'' function, but set that as the expression you are integrating by, rather than first defining it as $u$.
+
+\[\int x \sin x^{2} dx \rightarrow \int x \sin x^{2} d x^{2}\]
+
+This is essentially the same as.
+
+\[\int x \sin x^{2} dx \rightarrow \int x \sin u du\]
+
+Then you divide the expression being integrated by the derivative of the inside function.
+
+\[\int x \sin x^{2} dx^{2} \rightarrow \int \frac{x \sin x^{2}}{2x} dx^{2} \]
+
+Which is essentially the same as.
+
+\[\int x \sin u du \rightarrow \int \frac{x \sin u}{2x} du \]
+
+Next you simplify.
+
+\[\int \frac{x \sin x^{2}}{2x} dx^{2} \rightarrow \frac{1}{2}\int \sin x^{2} dx^{2} \]
+
+And finish integrating, keeping in mind that you are integrating by the ``inner'' function, not $x$.
+
+\[\frac{1}{2}\int \sin x^{2} dx^{2} \rightarrow \frac{1}{2}(- \cos x^{2}) \]
+
+In summary, notice how little we had to actually write to integrate.
+\[\int x \sin x^{2} dx\]
+\[\int \frac{x \sin x^{2}}{2x} dx^{2}\]
+\[\int \frac{1}{2} \sin x^{2} dx^{2}\]
+\[-\frac{1}{2} \cos x^{2}\]
+
+\section{Understanding My Method}
+Perhaps you might agree that this method saves time on some problems. But you might wonder if this method comes at the cost of understanding, making someone more confused. I would argue that this method has the potential to do the opposite. Let me show how this function is extracted from the chain rule.
+\[(f(g(x)))' = f'(g(x))g'(x)\]
+Now we are going to take the antiderivative of $f$, the rule is still the same, just easier for us to work with since now the we have an $f$ on the right side rather than an $f'$.
+\[(\int f(g(x)) dg(x))' = f(g(x))g'(x)\]
+Notice that we are integrating by $g(x)$, not by $x$, this is since we only took the antiderivative of $f$, NOT $g$. We are basically composing the functions $\int f(u) du$ (which is the antiderivative of $f$) and $g(x)$ to get $\int f(g(x)) dg(x)$.
+
+Now we are going to replace $f$ with $f/g'(x)$, so that after we simplify, we can get $f(g(x))$ on one side of the equation.
+\[(\int \frac{f(g(x))}{g'(x)} dg(x))' = \frac{f(g(x))}{g'(x)}g'(x)\]
+\[(\int \frac{f(g(x))}{g'(x)} dg(x))' = f(g(x))\]
+
+Now take the antiderivative on both sides. This cancels out with the derivative on the left side, which leaves us with:
+\[\int \frac{f(g(x))}{g'(x)} dg(x) = \int f(g(x)) dx\]
+
+That is the reverse chain rule.
+
+Now lets prove that this is truely the reverse of the chain rule by taking the derivative of both sides.
+\[(\int \frac{f(g(x))}{g'(x)} dg(x))' = f(g(x))\]
+
+If this is really the reverse of the chain rule you would expect applying the chain rule to the left side will result in $f(g(x))$.
+Of course the ``inner'' function on the left side is $g(x)$ and the ``outer'' function is $\int \frac{f(u)}{g'(x)} du$. (The derivative of the outer function should be $\frac{f(u)}{g'(x)}$)
+
+\[\frac{f(g(x))}{g'(x)}g'(x) = f(g(x))\]
+
+Which simplifies.
+\[f(g(x)) = f(g(x))\]
+
+I am not adding $+C$ because screw you.
+\end{document}
